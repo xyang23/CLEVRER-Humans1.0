@@ -34,19 +34,6 @@ class ResNetLSTM(nn.Module):
             input_dropout_p=input_dropout_p,
             rnn_type=rnn_type,
             rnn_dropout_p=hidden_dropout_p)
-        # self.decoder = rnn.DecoderRNN(
-        #     self.embedding,
-        #     vocab_size,
-        #     ans_max_len,
-        #     dim_hidden * 2,
-        #     dim_word,
-        #     sos_id,
-        #     eos_id,
-        #     device,
-        #     bidirectional=bidirectional,
-        #     input_dropout_p=input_dropout_p,
-        #     rnn_type=rnn_type,
-        #     rnn_dropout_p=rnn_dropout_p)
         self.mlp = mlp.MLP(dim_hidden * 3, 1, dim_hidden, 2, input_dropout_p=hidden_dropout_p, hidden_dropout_p=hidden_dropout_p)
         self.rnn_type = rnn_type
 

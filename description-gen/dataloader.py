@@ -16,7 +16,7 @@ import utils
 
 class CEGDataset(Dataset):
 
-    def __init__(self, data_dir=None, feats_dir=None, cache_dir=None, graph_path='/viscam/u/xyang23/easyturk/easyturk/checkpoints/10000-10599_5_29_launch_answer_flatten_new.p', use_raw_qa=False, n_choice=None, shuffle=True, text_only=False):
+    def __init__(self, data_dir=None, feats_dir=None, cache_dir=None, graph_path='', use_raw_qa=False, n_choice=None, shuffle=True, text_only=False):
         super(CEGDataset, self).__init__()
 
         random.seed(2021)
