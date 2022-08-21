@@ -18,9 +18,23 @@ into the `clevrer_monet_latents` folder. It contains processed data of the origi
 - Pretraining and finetuning: enter `object_attention_for_reasoning_finetune` and run `CUDA_VISIBLE_DEVICES=0 python3 train_model.py`.
 
 
-### CNN+LSTM Model
+### CNN+LSTM and CNN+BERT
 
+Download: 
+- Annotations, and CEGs from our [website](https://sites.google.com/stanford.edu/clevrer-humans/home). 
+- Cache of pre-computed CNN features for all videos from the [drive](https://drive.google.com/drive/folders/1FQ4AsQnjjCqXe9_oschZ8xQebr5tcz8x?usp=sharing).
 
-### CNN+BERT
+To train the models on CLEVRER-Humans from scratch:
 
+`python train.py --model_type MODEL_TYPE--output_dir OUTPUT_DIR --graph_path CEG_PATH  --use_raw_qa True --train_phase cegv3_core_train --validation_phase cegv3_core_val`
+
+To pretrain the models on CLEVRER:
+
+`python3 train.py --model_type MODEL_TYPE --output_dir OUTPUT_DIR --graph_path CEG_PATH  --use_raw_qa True --train_phase train --validation_phase validation`
+
+To finetune the pretrained models on CLEVRER-Humans:
+
+`python3 train.py --model_type MODEL_TYPE--output_dir OUTPUT_DIR --graph_path CEG_PATH  --use_raw_qa True --model_name_or_path OUTPUT_DIR_PRETRAINED  --train_phase cegv3_core_val --validation_phase cegv3_core_val`
+
+`MODEL_TYPE: resnet50_lstm / resnet50_bert`
 
