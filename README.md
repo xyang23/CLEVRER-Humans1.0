@@ -4,13 +4,15 @@ Building machines that can reason about physical events and their causal relatio
 
 # Usage
 
-`captioning.py`:  Captioning model for description generation.
+`description-gen/captioning.py`:  Captioning model for description generation.
 
-`dataset_pipeline.py`: Pipeline to generate CLEVRER-Humans, including trajectory filtering, object and event grounding, and bounding box visualization.
+`description-gen/dataset_pipeline.py`: Pipeline to generate CLEVRER-Humans, including trajectory filtering, object and event grounding, and bounding box visualization.
 
-`dataloader.py`: Dataloader for CEGs and QA pairs.
+`description-gen/dataloader.py`: Dataloader for CEGs and QA pairs.
 
-`models`: baseline models.
+`models`: Baseline models. See README in the folder.
+
+`causal-diff`: Experiments on the divergence of different causal relations. See README in the folder.
 
 # Data
 Data and more info is on our project website: https://sites.google.com/stanford.edu/clevrer-humans/home
